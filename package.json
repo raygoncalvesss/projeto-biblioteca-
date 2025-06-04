@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Projeto back-end de biblioteca com banco de dados",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
   },
   "keywords": [
     "javascript",
@@ -13,5 +15,14 @@
     "banco"
   ],
   "author": "Rayssa",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.9.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "prisma": "^6.9.0"
+  }
 }
