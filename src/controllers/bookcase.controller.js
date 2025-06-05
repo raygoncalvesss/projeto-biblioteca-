@@ -1,10 +1,10 @@
-import boockcasesModel from "../models/bookcase.model.js";
+import bookcasesModel from "../models/bookcase.model.js";
 
-class BoockcasesController {
-    async getAllBoockcases (req, res) {
+class BookcasesController {
+    async getAllBookcases (req, res) {
         try {
-            const boockcase = await boockcasesModel.findAll()
-            res.status(200).json(boockcase);
+            const bookcase = await bookcasesModel.findAll()
+            res.status(200).json(bookcase);
         } catch (error) {
             console.error("erro no controller da estante:", error);
             res.status(500).json({ error: "Erro ao buscar livros na estante" });
@@ -27,11 +27,11 @@ class BoockcasesController {
                 gender
             };
 
-            const newBoockcase = await boockcasesModel.create(data);
+            const newBookcase = await bookcasesModel.create(data);
 
             return res.status(201).json({
                 message: "Nova estante de livros criada com sucesso!",
-                newBoockcase,
+                newBookcase,
             });
         } catch (error) {
             console.error("Erro ao criar nova estante", error);
@@ -40,4 +40,4 @@ class BoockcasesController {
     }
 }
 
-export default new BoockcasesController();
+export default new BookcasesController();
